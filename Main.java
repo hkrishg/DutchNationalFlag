@@ -18,29 +18,29 @@ class Main {
   // Input: [2, 2, 0, 1, 2, 0]
   // Output: [0 0 1 2 2 2 ]
 
-  private static void dutchNationalFlag(int[] a) {
-    int n = a.length;
+  private static void dutchNationalFlag(int[] arr) {
+    int n = arr.length;
     int low = 0;
     int high = n - 1;
     for (int i = 0; i <= high;) {
-      if (a[i] == 0) {
-        Main.swap(i, low, a);
+      if (arr[i] == 0) {
+        Main.swap(i, low, arr);
         i++;
         low++;
-      } else if (a[i] == 1) {
+      } else if (arr[i] == 1) {
         i++;
       } else {
-        Main.swap(i, high, a);
+        Main.swap(i, high, arr);
         high--;
       }
     }
 
   }
 
-  private static void swap(int x, int y, int[] a) {
-    int temp = a[x];
-    a[x] = a[y];
-    a[y] = temp;
+  private static void swap(int x, int y, int[] arr) {
+    int temp = arr[x];
+    arr[x] = arr[y];
+    arr[y] = temp;
   }
 
   public static void main(String[] args) {
